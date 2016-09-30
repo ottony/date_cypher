@@ -31,7 +31,7 @@ npm run dev
 # Example
 
 ```javascript
-  let raw = 'Some texto to be ciphered';
+  let raw = 'Some text to be ciphered';
   let date = '23/06/1993';
   
   let cy  = DateCypher.cypher(raw, date);
@@ -45,11 +45,11 @@ npm run dev
 
 ```node
 > raw
-'Some texto to be ciphered'
+'Some text to be ciphered'
 > cy.toString()
-'Urmk!}n{vr zp)kh"fivin{hf'
+'Urmk!}n{v#tu!kn#elpnf{ng'
 > cy.toString('hex')
-'55726d6b217d6e7b7672207a70296b6822666976696e7b6866'
+'55726d6b217d6e7b76237475216b6e23656c706e667b6e67'
 > dec.toString()
-'Some texto to be ciphered'
+'Some text to be ciphered'
 ```
