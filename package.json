@@ -2,7 +2,7 @@
   "name": "date_cypher",
   "version": "1.0.0",
   "description": "A cypher by date",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "prestart": "babel app --out-dir dist",
     "dev": "nodemon --exec babel-node app/index.js",
