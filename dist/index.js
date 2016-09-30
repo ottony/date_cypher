@@ -1,18 +1,21 @@
-const _ = require('underscore');
-const base = 255;
+'use strict';
 
-const createKey = date => {
+var _ = require('underscore');
+var base = 255;
+
+var createKey = function createKey(date) {
   return date.replace(/[\/-]/g, '').split('');
 };
 
-const transform = (raw, date, pass, encoding) => {
-  const buffer = Buffer.from(raw, encoding);
-  const key = createKey(date);
-  const keyLength = _.size(key);
+var transform = function transform(raw, date, pass, encoding) {
+  var buffer = Buffer.from(raw, encoding);
+  var key = createKey(date);
+  var keyLength = _.size(key);
 
-  let step, transformed;
+  var step = void 0,
+      transformed = void 0;
 
-  return new Buffer(_.map(buffer, (c, i) => {
+  return new Buffer(_.map(buffer, function (c, i) {
     step = pass * key[i % keyLength];
     transformed = c + step;
 
@@ -20,15 +23,15 @@ const transform = (raw, date, pass, encoding) => {
   }));
 };
 
-const cypher = (raw, date, encoding) => {
+var cypher = function cypher(raw, date, encoding) {
   return transform(raw, date, 1, encoding);
 };
 
-const decipher = (raw, date, encoding) => {
+var decipher = function decipher(raw, date, encoding) {
   return transform(raw, date, -1, encoding);
 };
 
-const DateCypher = {
+var DateCypher = {
   cypher: cypher,
   decipher: decipher
 };
