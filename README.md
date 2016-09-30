@@ -43,8 +43,6 @@ npm run dev
   console.log(dec.toString());
 ```
 
-that will produce
-
 ```node
 > raw
 'Some texto to be ciphered'
