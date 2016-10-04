@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('underscore');
-var base = 128;
+var base = 256;
 
 var createKey = function createKey(date) {
   return date.replace(/[\/-]/g, '').split('');
