@@ -1,5 +1,5 @@
 const _ = require('underscore');
-const base = 128;
+const base = 256;
 
 const createKey = (date) => {
   return date.replace(/[\/-]/g, '').split('');
